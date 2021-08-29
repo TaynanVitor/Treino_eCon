@@ -1,0 +1,51 @@
+"CREATE DATABASE banks;
+USE banks;
+
+CREATE TABLE bancos
+(
+ID_Banco INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+NomeBanco VARCHAR (80),
+Codigo VARCHAR (04),
+Digital VARCHAR (03)
+);
+
+CREATE TABLE conta_bancaria
+(
+ID_titular INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+nomesobrenome VARCHAR (150),
+cpf VARCHAR (11),
+Dt_Nac DATE,
+idbanco INT,
+CONSTRAINT FK_bancos
+FOREIGN KEY (idbanco)
+REFERENCES bancos(ID_Banco)
+);
+
+SELECT*FROM bancos;
+
+INSERT INTO bancos(NomeBanco,Codigo,Digital)
+VALUE  ('BANCO DO BRASIL S.A','001','NÃO');
+
+INSERT INTO bancos(NomeBanco,Codigo,Digital)
+VALUE Cod_Tabela_Bank ('BANCO BRADESCO S.A','237','NÃO'),
+Cod_Tabela_Bank Cod_Tabela_Bank ('NU PAGAMENTOS S.A','260','SIM'),
+        ('ITAÚ UNIBANCO S.A','341','NÃO'),
+        ('CAIXA ECONÔMICA FEDERAL','104','NÃO'),
+        ('BANCO SANTANDER BRASIL S.A','033','NÃO'),
+        ('BANCO DIGIO S.A','335','SIM'),
+        ('PAGSEGURO INTERNET S.A','290','SIM'),
+        ('PICPAY SERVIÇOS S.A','380','SIM'),
+        ('NEXT BANK','237','SIM'),
+        ('BANCO ORIGINAL S.A','212','SIM'),
+        ('MERCADO PAGO','323','SIM'),
+        ('BANCO SOFISA S.A','637','SIM'),
+        ('BANCO INTER S.A','077','SIM'),
+        ('BANCOOB S.A','756','NÃO'),
+        ('BANCO VOTORANTIM S.A','655','NÃO'),
+        ('NEON PAGAMENTOS S.A','655','SIM'),
+        ('BANCO MERCATIL DO BRASIL S.A','389','NÃO'),
+        ('BANCO SAFRA S.A','422','NÃO'),
+        ('BANCO CETELEM S.A','739','NÃO'),
+        ('BANCO CITIBANK S.A','745','NÃO'),
+        ('BANCO DE BRASÍLIA (BRB)','070','NÃO'),
+);
