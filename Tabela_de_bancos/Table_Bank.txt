@@ -49,3 +49,20 @@ Cod_Tabela_Bank Cod_Tabela_Bank ('NU PAGAMENTOS S.A','260','SIM'),
         ('BANCO CITIBANK S.A','745','NÃO'),
         ('BANCO DE BRASÍLIA (BRB)','070','NÃO'),
 );
+
+
+DROP TABLE conta_bancaria;
+
+CREATE TABLE conta_bancaria 
+(
+ID_titular INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+nomesobrenome VARCHAR (150),
+cpf VARCHAR (11),
+Dt_Nac DATE,
+conta VARCHAR (20),
+agencia VARCHAR (10),
+idbanco INT,
+CONSTRAINT FK_bancos
+FOREIGN KEY (idbanco)
+REFERENCES bancos(ID_Banco)
+);
